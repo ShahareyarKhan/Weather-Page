@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+}
+
+*{
+  transition: 0.5s all ease;
+}
+
+
+.boxi{
+  padding: 30px;
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.213) inset, -10px -10px 10px rgba(255, 255, 255, 0.213) inset;
+  
+  background-image: radial-gradient(rgba(0, 89, 255, 0.47), rgba(255, 255, 255, 0.213));
+  cursor: pointer;
+}
+
+.boxi:hover{
+  transform: scale(1.02);
+}
+
+table{
+  background: #f76161a9;
+  border: 2px solid black;
+  font-weight: 600;
+  width: 95%;
+  margin: auto;
+}
+
+.button{
+  border: 1px solid black;
+}
+.button:hover{
+  box-shadow: 10px 10px 10px #f79d61 inset, -10px -10px 10px #f79d61 inset;
+
+}
+
+.forecast{
+  ::-webkit-scrollbar {
+    display: none;
+  };
+}
