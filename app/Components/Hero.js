@@ -1,7 +1,5 @@
 import React from 'react'
-import { FaSearch } from "react-icons/fa";
-const Hero = (props) => {
-    const { search, setsearch } = props;
+const Hero = () => {
     return (
         <div className='min-h-[40vh] flex flex-col items-center justify-center w-5/6 lg:w-2/3 mx-auto text-xl text-center leading-[45px]   '>
             <div>

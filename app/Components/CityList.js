@@ -1,18 +1,16 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
 import { IoMdArrowRoundBack } from "react-icons/io";
-function CityList(props) {
+
+function CityList() {
     const [cityList, setCityList] = useState([]);
     const [loading, setLoading] = useState(false);
     const [hasMore, setHasMore] = useState(true);
     const pageRef = useRef(1);
     const [searchTerm, setSearchTerm] = useState('');
 
-    const { search, setsearch } = props;
-
-
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             setLoading(true);
             const response = await fetch(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?order_by=cou_name_en&limit=100&offset=${pageRef.current}`);
@@ -34,9 +32,9 @@ function CityList(props) {
         } finally {
             setLoading(false);
         }
-    };
+    }, [searchTerm]);
 
-    const handleSearch = async () => {
+    const handleSearch = useCallback(async () => {
         setCityList([]); // Clear existing city list
         pageRef.current = 1; // Reset page number
         try {
@@ -57,13 +55,13 @@ function CityList(props) {
         } finally {
             setLoading(false);
         }
-    };
+    }, [searchTerm]);
 
-
-    const handlesearchchange = (e) => {
+    const handlesearchchange = useCallback((e) => {
         setSearchTerm(e.target.value)
         handleSearch();
-    }
+    }, [handleSearch]);
+
     useEffect(() => {
         const observerCallback = entries => {
             entries.forEach(entry => {
@@ -83,7 +81,7 @@ function CityList(props) {
         } else {
             console.warn("Load more trigger element not found.");
         }
-    }, [loading, hasMore]);
+    }, [loading, hasMore, fetchData, searchTerm]);
 
     return (
         <div>
@@ -137,7 +135,7 @@ function CityList(props) {
                             </td>
 
                             <td >
-                                <a href={`/Weather/${city.ascii_name}/${city.coordinates.lon}/${city.coordinates.lat}`} className='flex items-center h-[50px] w-full justify-center border-2 border-black'>        
+                                <a href={`/Weather/${city.ascii_name}/${city.coordinates.lon}/${city.coordinates.lat}`} className='flex items-center h-[50px] w-full justify-center border-2 border-black'>
                                     {city.timezone}
                                 </a>
                             </td>

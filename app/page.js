@@ -1,11 +1,9 @@
 "use client";
-import React, { useState } from 'react'
+import React from 'react'
 import CityList from './Components/CityList'
 import Hero from './Components/Hero'
-import { FaSearch } from "react-icons/fa";
 
 const page = () => {
-  const [search, setsearch] = useState(false)
   return (
     <>
       <div className='flex justify-around items-center h-[80px] md:h-[90px] bg-[#f76161c2]  text-xl boxshadow-out'>
@@ -13,10 +11,10 @@ const page = () => {
         
       </div>
 
-      <Hero search={search} setsearch={setsearch} />
+      <Hero />
 
       <div className='w-full lg:w-4/5 mx-auto  min-h-screen'>
-        <CityList search={search} setsearch={setsearch} />
+        <CityList />
       </div>
     </>
   )
