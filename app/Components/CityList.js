@@ -84,7 +84,7 @@ function CityList() {
     }, [loading, hasMore, fetchData, searchTerm]);
 
     return (
-        <div>
+        <div className="mx-3">
             <div className='flex items-center border-2 border-black mx-auto  rounded-lg  w-3/4 mb-11 lg:w-1/2'>
                 <input
                     type="text"
@@ -96,7 +96,7 @@ function CityList() {
 
                 <button className='p-3 hover:bg-[#f79d61] bg-white font-bold rounded-r-lg' onClick={handleSearch}>Search</button>
             </div>
-            <table className=' font-700 lg:text-xl   mx-3'>
+            <table className=' font-700 lg:text-xl   '>
                 <thead className='h-[60px] border-b-2 border-black bg-[#ff5e00c6] '>
                     <tr className=''>
                         <th className='border-2 border-black'>Code</th>
