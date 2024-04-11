@@ -199,7 +199,7 @@ const WeatherPage = ({ params }) => {
                           minute: '2-digit',
                         })}
                       </div>
-                      <Image
+                      <img
                         src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
                         alt={item.weather[0].description}
                         width={50}
