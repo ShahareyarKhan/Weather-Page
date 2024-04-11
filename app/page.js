@@ -8,7 +8,6 @@ const page = () => {
     <>
       <div className='flex justify-around items-center h-[80px] md:h-[90px] bg-[#f76161c2]  text-xl boxshadow-out'>
         <h1 className='text-2xl font-semibold  '>Weather Forecasting App</h1>
-        
       </div>
 
       <Hero />

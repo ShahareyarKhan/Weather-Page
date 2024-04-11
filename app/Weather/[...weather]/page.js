@@ -12,7 +12,7 @@ const WeatherPage = ({ params }) => {
   const [forecast, setForecast] = useState(null);
   const API_KEY = process.env.API_KEY;
   const [loading, setLoading] = useState(false);
-  const [forecastVisible, setForecastVisible] = useState(false); 
+  const [forecastVisible, setForecastVisible] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -48,7 +48,7 @@ const WeatherPage = ({ params }) => {
       await fetchForecast();
     };
     fetchDataAndForecast();
-  }, [city]); 
+  }, [city]);
 
   const getNextFiveDaysForecast = () => {
     if (!forecast || !forecast.list) return [];
@@ -168,12 +168,12 @@ const WeatherPage = ({ params }) => {
               </div>
             )}
           </div>
-          <div
+         {!loading&& <div
             className='text-center font-semibold md:text-md lg:text-xl border-2 border-black rounded-lg p-2 hover:bg-blue-400 cursor-pointer w-[200px] lg:w-[300px] mx-auto'
             onClick={() => setForecastVisible(true)}
           >
             Check 5 days Forecast
-          </div>
+          </div>}
         </div>
       )}
       {forecastVisible && (
@@ -222,12 +222,12 @@ const WeatherPage = ({ params }) => {
               {error}
             </div>
           )}
-          <div
+          {!loading&&<div
             className='text-center font-semibold md:text-md lg:text-xl border-2 border-black rounded-lg p-2 hover:bg-blue-400 cursor-pointer w-[200px] lg:w-[300px] mx-auto'
             onClick={() => setForecastVisible(false)}
           >
             Back to weather
-          </div>
+          </div>}
         </div>
       )}
     </div>
