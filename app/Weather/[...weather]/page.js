@@ -4,7 +4,6 @@ import axios from 'axios';
 import { WiHumidity } from "react-icons/wi";
 import ClipLoader from "react-spinners/ClipLoader";
 import { FaSearch } from 'react-icons/fa';
-import Image from 'next/image';
 
 const WeatherPage = ({ params }) => {
   const city = params.weather[0];
