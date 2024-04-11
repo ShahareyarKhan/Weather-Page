@@ -177,7 +177,7 @@ const WeatherPage = ({ params }) => {
         </div>
       )}
       {forecastVisible && (
-        <div className='py-9 m-3'>
+        <div className='py-9 mx-3'>
           <div className='text-2xl text-center font-semibold py-9'>
             5 days forecast weather {city}
           </div>

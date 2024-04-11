@@ -96,7 +96,7 @@ function CityList() {
 
                 <button className='p-3 hover:bg-[#f79d61] bg-white font-bold rounded-r-lg' onClick={handleSearch}>Search</button>
             </div>
-            <table className=' font-700 lg:text-xl   '>
+            <table className=' font-700 lg:text-xl   mx-3'>
                 <thead className='h-[60px] border-b-2 border-black bg-[#ff5e00c6] '>
                     <tr className=''>
                         <th className='border-2 border-black'>Code</th>
