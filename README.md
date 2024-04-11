@@ -18,4 +18,8 @@ Welcome to the Weather Forecasting App! This application allows users to search 
 - **React Spinners**: React Spinners library is used to display loading spinners while fetching weather data.
 - **Geolocation API**: The Geolocation API is used to get the user's current location for weather information.
 
-
+## Usage
+- Enter the name of the city.
+- View the current weather details displayed on the screen.
+- To see the forecast for the next five days, click on the "Check 5 days Forecast" button.
+- Navigate back to the current weather by clicking on the "Back to weather" button.
