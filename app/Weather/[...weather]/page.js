@@ -116,7 +116,7 @@ const WeatherPage = ({ params }) => {
                       </div>
                     </div>
                     <div className='text-center flex items-center gap-5'>
-                      <Image
+                      <img
                         src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
                         alt={weatherData.weather[0].description}
                         width={50}
